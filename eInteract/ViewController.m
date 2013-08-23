@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "LoginViewController.h"
+#import "RegistrationViewController.h"
 
 @interface ViewController ()
 
@@ -24,6 +26,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)loginBtn:(id)sender{
+    LoginViewController *loginController = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
+    [self presentViewController:loginController animated:YES completion:nil];
+    
+}
+
+-(IBAction)registerBtn:(id)sender{
+    RegistrationViewController *regController = [[RegistrationViewController alloc]initWithNibName:@"RegistrationViewController" bundle:nil];
+    [self presentViewController:regController animated:YES completion:nil];
 }
 
 @end

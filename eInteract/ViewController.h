@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+    
+}
+
+-(IBAction)loginBtn:(id)sender;
+-(IBAction)registerBtn:(id)sender;
 
 @end

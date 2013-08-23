@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B910FA217C6407E009A80A8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B910FA017C6407E009A80A8 /* LoginViewController.m */; };
+		6B910FA317C6407E009A80A8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B910FA117C6407E009A80A8 /* LoginViewController.xib */; };
+		6B910FA717C6583A009A80A8 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B910FA517C6583A009A80A8 /* RegistrationViewController.m */; };
+		6B910FA817C6583A009A80A8 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B910FA617C6583A009A80A8 /* RegistrationViewController.xib */; };
 		BAE5805D17C610D600059EC4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE5805C17C610D600059EC4 /* UIKit.framework */; };
 		BAE5805F17C610D600059EC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE5805E17C610D600059EC4 /* Foundation.framework */; };
 		BAE5806117C610D600059EC4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE5806017C610D600059EC4 /* CoreGraphics.framework */; };
@@ -21,6 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B910F9F17C6407E009A80A8 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		6B910FA017C6407E009A80A8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		6B910FA117C6407E009A80A8 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		6B910FA417C6583A009A80A8 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		6B910FA517C6583A009A80A8 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		6B910FA617C6583A009A80A8 /* RegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		BAE5805917C610D600059EC4 /* eInteract.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eInteract.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAE5805C17C610D600059EC4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BAE5805E17C610D600059EC4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,6 +99,12 @@
 				BAE5807517C610D600059EC4 /* ViewController.m */,
 				BAE5807717C610D600059EC4 /* ViewController.xib */,
 				BAE5806317C610D600059EC4 /* Supporting Files */,
+				6B910F9F17C6407E009A80A8 /* LoginViewController.h */,
+				6B910FA017C6407E009A80A8 /* LoginViewController.m */,
+				6B910FA117C6407E009A80A8 /* LoginViewController.xib */,
+				6B910FA417C6583A009A80A8 /* RegistrationViewController.h */,
+				6B910FA517C6583A009A80A8 /* RegistrationViewController.m */,
+				6B910FA617C6583A009A80A8 /* RegistrationViewController.xib */,
 			);
 			path = eInteract;
 			sourceTree = "<group>";
@@ -163,6 +179,8 @@
 				BAE5807117C610D600059EC4 /* Default@2x.png in Resources */,
 				BAE5807317C610D600059EC4 /* Default-568h@2x.png in Resources */,
 				BAE5807917C610D600059EC4 /* ViewController.xib in Resources */,
+				6B910FA317C6407E009A80A8 /* LoginViewController.xib in Resources */,
+				6B910FA817C6583A009A80A8 /* RegistrationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +194,8 @@
 				BAE5806917C610D600059EC4 /* main.m in Sources */,
 				BAE5806D17C610D600059EC4 /* AppDelegate.m in Sources */,
 				BAE5807617C610D600059EC4 /* ViewController.m in Sources */,
+				6B910FA217C6407E009A80A8 /* LoginViewController.m in Sources */,
+				6B910FA717C6583A009A80A8 /* RegistrationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +318,7 @@
 				BAE5807E17C610D600059EC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
