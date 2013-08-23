@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
-@interface RegistrationViewController : UIViewController
+@interface RegistrationViewController : UIViewController{
+    
+}
+
+@property (nonatomic,retain) IBOutlet UITextField *password;
+@property (nonatomic,retain) IBOutlet UITextField *confirmPassword;
+@property (nonatomic,retain) IBOutlet UITextField *emailId;
+@property (nonatomic,retain) IBOutlet UITextField *mobileNo;
+@property (nonatomic,retain) IBOutlet UITextField *fullName;
+
+-(IBAction)submitBtn:(id)sender;
+-(User *)populateUser;
 
 @end

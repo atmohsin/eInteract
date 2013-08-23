@@ -30,8 +30,8 @@
 
 -(IBAction)loginBtn:(id)sender{
     LoginViewController *loginController = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
-    [self presentViewController:loginController animated:YES completion:nil];
-    
+    //[self presentViewController:loginController animated:YES completion:nil];
+    [self.navigationController pushViewController:loginController animated:YES];
 }
 
 -(IBAction)registerBtn:(id)sender{

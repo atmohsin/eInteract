@@ -7,6 +7,8 @@
 //
 
 #import "RegistrationViewController.h"
+#import "User.h"
+#import "Database.h"
 
 @interface RegistrationViewController ()
 
@@ -34,5 +36,33 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(BOOL) textFieldShouldReturn :(UITextField *) textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
+
+-(User *)populateUser{
+    User *user = [[User alloc]init];
+    user.userId = self.emailId.text;
+    user.password = self.password.text;
+    user.userType = @"S";
+    user.fullName = self.fullName.text;
+    user.mobileNo = self.mobileNo.text;
+    
+    return user;
+    
+}
+
+-(IBAction)submitBtn:(id)sender{
+    Database *db = [Database INSTANCE];
+    User *user = [self populateUser];
+    
+    [db createUser:user.userId password:user.password usertype:user.userType fullname:user.fullName mobileno:user.mobileNo];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end

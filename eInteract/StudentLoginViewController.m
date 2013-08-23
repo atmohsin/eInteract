@@ -1,18 +1,18 @@
 //
-//  LoginViewController.m
+//  StudentLoginViewController.m
 //  eInteract
 //
-//  Created by Mohsin Khan on 22/08/13.
+//  Created by Mohsin Khan on 23/08/13.
 //  Copyright (c) 2013 Codefrux Training. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "StudentLoginViewController.h"
 
-@interface LoginViewController ()
+@interface StudentLoginViewController ()
 
 @end
 
-@implementation LoginViewController
+@implementation StudentLoginViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,10 +33,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(IBAction)signInBtn:(id)sender{
-    
 }
 
 @end

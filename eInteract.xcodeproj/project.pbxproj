@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B084B7717C76D29000DC3D6 /* eInteractdb.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6B084B7617C76D29000DC3D6 /* eInteractdb.sqlite */; };
+		6B084B7A17C771A8000DC3D6 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B084B7917C771A8000DC3D6 /* Database.m */; };
+		6B084B7D17C771D1000DC3D6 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B084B7B17C771D1000DC3D6 /* libsqlite3.0.dylib */; };
+		6B084B7E17C771D1000DC3D6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B084B7C17C771D1000DC3D6 /* libsqlite3.dylib */; };
+		6B084B8517C7AFDF000DC3D6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B084B8417C7AFDF000DC3D6 /* User.m */; };
+		6B084B8917C7D8E3000DC3D6 /* StudentLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B084B8717C7D8E2000DC3D6 /* StudentLoginViewController.m */; };
+		6B084B8A17C7D8E3000DC3D6 /* StudentLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B084B8817C7D8E3000DC3D6 /* StudentLoginViewController.xib */; };
 		6B910FA217C6407E009A80A8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B910FA017C6407E009A80A8 /* LoginViewController.m */; };
 		6B910FA317C6407E009A80A8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B910FA117C6407E009A80A8 /* LoginViewController.xib */; };
 		6B910FA717C6583A009A80A8 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B910FA517C6583A009A80A8 /* RegistrationViewController.m */; };
@@ -25,6 +32,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B084B7617C76D29000DC3D6 /* eInteractdb.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = eInteractdb.sqlite; sourceTree = "<group>"; };
+		6B084B7817C771A8000DC3D6 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
+		6B084B7917C771A8000DC3D6 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
+		6B084B7B17C771D1000DC3D6 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		6B084B7C17C771D1000DC3D6 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		6B084B8317C7AFDF000DC3D6 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		6B084B8417C7AFDF000DC3D6 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		6B084B8617C7D8E2000DC3D6 /* StudentLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentLoginViewController.h; sourceTree = "<group>"; };
+		6B084B8717C7D8E2000DC3D6 /* StudentLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentLoginViewController.m; sourceTree = "<group>"; };
+		6B084B8817C7D8E3000DC3D6 /* StudentLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentLoginViewController.xib; sourceTree = "<group>"; };
 		6B910F9F17C6407E009A80A8 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		6B910FA017C6407E009A80A8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		6B910FA117C6407E009A80A8 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -54,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B084B7D17C771D1000DC3D6 /* libsqlite3.0.dylib in Frameworks */,
+				6B084B7E17C771D1000DC3D6 /* libsqlite3.dylib in Frameworks */,
 				BAE5805D17C610D600059EC4 /* UIKit.framework in Frameworks */,
 				BAE5805F17C610D600059EC4 /* Foundation.framework in Frameworks */,
 				BAE5806117C610D600059EC4 /* CoreGraphics.framework in Frameworks */,
@@ -63,9 +82,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B084B7517C76BC1000DC3D6 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				6B084B7817C771A8000DC3D6 /* Database.h */,
+				6B084B7917C771A8000DC3D6 /* Database.m */,
+			);
+			name = database;
+			sourceTree = "<group>";
+		};
+		6B084B7F17C7943C000DC3D6 /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				6B084B8617C7D8E2000DC3D6 /* StudentLoginViewController.h */,
+				6B084B8717C7D8E2000DC3D6 /* StudentLoginViewController.m */,
+				6B910FA517C6583A009A80A8 /* RegistrationViewController.m */,
+				6B910FA417C6583A009A80A8 /* RegistrationViewController.h */,
+				6B910F9F17C6407E009A80A8 /* LoginViewController.h */,
+				6B910FA017C6407E009A80A8 /* LoginViewController.m */,
+			);
+			name = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		6B084B8017C79472000DC3D6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				6B084B8817C7D8E3000DC3D6 /* StudentLoginViewController.xib */,
+				6B910FA617C6583A009A80A8 /* RegistrationViewController.xib */,
+				6B910FA117C6407E009A80A8 /* LoginViewController.xib */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		6B084B8117C79487000DC3D6 /* images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		6B084B8217C7AFB9000DC3D6 /* BusinessObjects */ = {
+			isa = PBXGroup;
+			children = (
+				6B084B8317C7AFDF000DC3D6 /* User.h */,
+				6B084B8417C7AFDF000DC3D6 /* User.m */,
+			);
+			name = BusinessObjects;
+			sourceTree = "<group>";
+		};
 		BAE5805017C610D600059EC4 = {
 			isa = PBXGroup;
 			children = (
+				6B084B7B17C771D1000DC3D6 /* libsqlite3.0.dylib */,
+				6B084B7C17C771D1000DC3D6 /* libsqlite3.dylib */,
+				6B084B7617C76D29000DC3D6 /* eInteractdb.sqlite */,
 				BAE5806217C610D600059EC4 /* eInteract */,
 				BAE5805B17C610D600059EC4 /* Frameworks */,
 				BAE5805A17C610D600059EC4 /* Products */,
@@ -93,18 +163,17 @@
 		BAE5806217C610D600059EC4 /* eInteract */ = {
 			isa = PBXGroup;
 			children = (
+				6B084B8217C7AFB9000DC3D6 /* BusinessObjects */,
+				6B084B8117C79487000DC3D6 /* images */,
+				6B084B8017C79472000DC3D6 /* view */,
+				6B084B7F17C7943C000DC3D6 /* viewcontrollers */,
+				6B084B7517C76BC1000DC3D6 /* database */,
 				BAE5806B17C610D600059EC4 /* AppDelegate.h */,
 				BAE5806C17C610D600059EC4 /* AppDelegate.m */,
 				BAE5807417C610D600059EC4 /* ViewController.h */,
 				BAE5807517C610D600059EC4 /* ViewController.m */,
 				BAE5807717C610D600059EC4 /* ViewController.xib */,
 				BAE5806317C610D600059EC4 /* Supporting Files */,
-				6B910F9F17C6407E009A80A8 /* LoginViewController.h */,
-				6B910FA017C6407E009A80A8 /* LoginViewController.m */,
-				6B910FA117C6407E009A80A8 /* LoginViewController.xib */,
-				6B910FA417C6583A009A80A8 /* RegistrationViewController.h */,
-				6B910FA517C6583A009A80A8 /* RegistrationViewController.m */,
-				6B910FA617C6583A009A80A8 /* RegistrationViewController.xib */,
 			);
 			path = eInteract;
 			sourceTree = "<group>";
@@ -181,6 +250,8 @@
 				BAE5807917C610D600059EC4 /* ViewController.xib in Resources */,
 				6B910FA317C6407E009A80A8 /* LoginViewController.xib in Resources */,
 				6B910FA817C6583A009A80A8 /* RegistrationViewController.xib in Resources */,
+				6B084B7717C76D29000DC3D6 /* eInteractdb.sqlite in Resources */,
+				6B084B8A17C7D8E3000DC3D6 /* StudentLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +267,9 @@
 				BAE5807617C610D600059EC4 /* ViewController.m in Sources */,
 				6B910FA217C6407E009A80A8 /* LoginViewController.m in Sources */,
 				6B910FA717C6583A009A80A8 /* RegistrationViewController.m in Sources */,
+				6B084B7A17C771A8000DC3D6 /* Database.m in Sources */,
+				6B084B8517C7AFDF000DC3D6 /* User.m in Sources */,
+				6B084B8917C7D8E3000DC3D6 /* StudentLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
