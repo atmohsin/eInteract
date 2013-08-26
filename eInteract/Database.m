@@ -42,6 +42,13 @@ static Database *instance = NULL;
     return self;
 }
 
+-(NSString *)toNSString:(char *)utfString {
+    if(NULL != utfString) {
+        return [NSString stringWithUTF8String:utfString];
+    }
+    return nil;
+}
+
 -(void) checkAndCreateDatabase {
     //check the databse is copyied into document directory if not copy it
     BOOL sucess;
@@ -90,6 +97,38 @@ static Database *instance = NULL;
     }
     sqlite3_close(db);
     return inserted;
+}
+
+-(User *) getUser:(NSString *)userId {
+    User *user = NULL;
+    
+    sqlite3 *db;
+    if(sqlite3_open([self.databasePath UTF8String], &db) == SQLITE_OK) {
+        const char *sqlStatement = [SELECT_USER_PROFILE_FOR_USERID UTF8String];
+        sqlite3_stmt *compiledStatement;
+        if(sqlite3_prepare_v2(db, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK)  {
+            sqlite3_bind_text(compiledStatement, 1, [userId UTF8String], -1, SQLITE_TRANSIENT);
+            
+            
+            while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+                user = [[User alloc]init];
+                user.userId = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 0)];
+                user.password = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 1)];
+                user.userType = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 2)];
+                user.fullName = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 3)];
+                user.mobileNo = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 4)];
+                
+                break;
+			}
+        }
+        // Release the compiled statement from memory
+        sqlite3_finalize(compiledStatement);
+    } else {
+        NSLog(@"getUser Error: %@", [NSString stringWithUTF8String:sqlite3_errmsg(db)]);
+    }
+    //Close the database
+    sqlite3_close(db);
+    return user;
 }
 
 

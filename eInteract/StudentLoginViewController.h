@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
-@interface StudentLoginViewController : UIViewController
+@interface StudentLoginViewController : UIViewController{
+    
+}
+
+
+@property (nonatomic,retain) IBOutlet UILabel *userName;
+@property (nonatomic,retain) User *user;
+
+
 
 @end

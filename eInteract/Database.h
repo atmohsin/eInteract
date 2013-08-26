@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
+#import "Q.h"
+#import "User.h"
 
 @interface Database : NSObject{
     
@@ -28,6 +30,8 @@ password : (NSString *) password
 usertype : (NSString *) usertype
 fullname : (NSString *) fullname
           mobileno : (NSString *) mobileno;
+
+-(User *)getUser :(NSString *) userId;
 
 
 @end

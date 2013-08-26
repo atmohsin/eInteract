@@ -36,7 +36,31 @@
 }
 
 -(IBAction)signInBtn:(id)sender{
+    NSString *userType = self.userType.text;
+    NSString *userId = self.userId.text;
+    Database *db = [Database INSTANCE];
+    User *user = [db getUser:userId];
+    if (user == NULL) {
+        UIAlertView *errorView = [[UIAlertView alloc]initWithTitle:@"Error" message:USER_DOES_NOT_EXIT delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [errorView show];
+        return;
+    }
     
+    if ([userType isEqualToString:@"s"]){
+            StudentLoginViewController *studentLoginController = [[StudentLoginViewController alloc]initWithNibName:@"StudentLoginViewController" bundle:nil];
+        [studentLoginController setUser:user];
+            [self.navigationController pushViewController:studentLoginController animated:YES];
+    }
+    else {
+        TeacherLoginViewController *teacherLoginController = [[TeacherLoginViewController alloc]initWithNibName:@"TeacherLoginViewController" bundle:nil];
+        [self.navigationController pushViewController:teacherLoginController animated:YES];
+    }
 }
+
+-(BOOL) textFieldShouldReturn :(UITextField *) textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
 
 @end

@@ -7,10 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
+#import "Database.h"
+#import "StudentLoginViewController.h"
+#import "TeacherLoginViewController.h"
+#import "M.h"
 
 @interface LoginViewController : UIViewController{
     
 }
+
+@property (nonatomic,retain) IBOutlet UITextField *userId;
+@property (nonatomic,retain) IBOutlet UITextField *password;
+@property (nonatomic,retain) IBOutlet UITextField *userType;
+
+@property (nonatomic,retain) User *user;
 
 -(IBAction)signInBtn:(id)sender;
 
