@@ -40,6 +40,11 @@
     NSString *userId = self.userId.text;
     NSString *userPassword = self.password.text;
     
+    if([userId isEqualToString:@""]){
+        self.message.text = @"Please enter user id";
+        return;
+    }
+    
     Database *db = [Database INSTANCE];
     User *user = [db getUser:userId];
     if (user == NULL) {
