@@ -13,6 +13,7 @@
 }
 
 extern NSString *const USER_DOES_NOT_EXIT;
+extern NSString *const USER_PASS_NOT_MATCH;
 
 
 @end

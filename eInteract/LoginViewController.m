@@ -38,12 +38,19 @@
 -(IBAction)signInBtn:(id)sender{
     NSString *userType = self.userType.text;
     NSString *userId = self.userId.text;
+    NSString *userPassword = self.password.text;
+    
     Database *db = [Database INSTANCE];
     User *user = [db getUser:userId];
     if (user == NULL) {
-        UIAlertView *errorView = [[UIAlertView alloc]initWithTitle:@"Error" message:USER_DOES_NOT_EXIT delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [errorView show];
+        [U showErrorMessage:USER_DOES_NOT_EXIT];
         return;
+    }
+    else{
+        if(![userPassword isEqualToString:user.password]){
+            [U showErrorMessage:USER_PASS_NOT_MATCH];
+            return;
+        }
     }
     
     if ([userType isEqualToString:@"s"]){

@@ -11,5 +11,6 @@
 @implementation M
 
 NSString *const USER_DOES_NOT_EXIT = @"User does not exists";
+NSString *const USER_PASS_NOT_MATCH = @"User Id and Password not matching.";
 
 @end
