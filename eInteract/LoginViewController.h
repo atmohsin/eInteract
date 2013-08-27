@@ -22,6 +22,8 @@
 @property (nonatomic,retain) IBOutlet UITextField *password;
 @property (nonatomic,retain) IBOutlet UITextField *userType;
 @property (nonatomic,retain) IBOutlet UILabel *message;
+@property (nonatomic,retain) IBOutlet UILabel *userIdMessage;
+@property (nonatomic,retain) IBOutlet UILabel *passwordMessage;
 
 @property (nonatomic,retain) User *user;
 

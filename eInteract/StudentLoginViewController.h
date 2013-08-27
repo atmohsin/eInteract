@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "ViewController.h"
+
 
 @interface StudentLoginViewController : UIViewController{
     
@@ -17,6 +19,6 @@
 @property (nonatomic,retain) IBOutlet UILabel *userName;
 @property (nonatomic,retain) User *user;
 
-
+-(IBAction)signOut:(id)sender;
 
 @end

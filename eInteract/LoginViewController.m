@@ -35,13 +35,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 -(IBAction)signInBtn:(id)sender{
     NSString *userType = self.userType.text;
     NSString *userId = self.userId.text;
     NSString *userPassword = self.password.text;
     
+    BOOL isValidate = YES;
+    
     if([userId isEqualToString:@""]){
-        self.message.text = @"Please enter user id";
+        self.userIdMessage.text = MSG_REQ;
+        isValidate = NO;
+    }
+    if([userPassword isEqualToString:@""]){
+        self.passwordMessage.text = MSG_REQ;
+        isValidate = NO;
+    }
+    
+    if (!isValidate) {
         return;
     }
     

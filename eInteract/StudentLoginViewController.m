@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.navigationItem setHidesBackButton:YES animated:YES];
     self.userName.text = self.user.fullName;
 }
 
@@ -35,5 +36,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(IBAction)signOut:(id)sender{
+    
+    NSArray *viewControllers = [[self navigationController] viewControllers];
+    for( int i=0;i<[viewControllers count];i++){
+        id obj=[viewControllers objectAtIndex:i];
+        if([obj isKindOfClass:[ViewController class]]){
+            [[self navigationController] popToViewController:obj animated:YES];
+            return;
+        }
+    }
+}
+
+
 
 @end
