@@ -10,6 +10,6 @@
 
 @implementation User
 
-@synthesize userId,password,userType,fullName,mobileNo;
+@synthesize userId,userName,password,userType,fullName,mobileNo;
 
 @end

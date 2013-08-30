@@ -49,6 +49,11 @@
     }
 }
 
+-(IBAction)viewProfileBtn:(id)sender {
+    StudentViewProfileViewController *studentProfileViewController = [[StudentViewProfileViewController alloc]initWithNibName:@"StudentViewProfileViewController" bundle:nil];
+    studentProfileViewController.user = self.user;
+    [self.navigationController pushViewController:studentProfileViewController animated:YES];
+}
 
 
 @end

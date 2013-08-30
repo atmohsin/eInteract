@@ -10,6 +10,7 @@
 
 @implementation Q
 
-NSString *const SELECT_USER_PROFILE_FOR_USERID = @"select userid,password,usertype,fullname,mobileno from userprofile where userid = ?";
+NSString *const SELECT_USER_PROFILE_FOR_USERID = @"select userid,username,password,usertype,fullname,mobileno from users where username = ?";
+NSString *const SELECT_COURSE_MARKS = @"select c.name as coursename,m.marks marks from course c,marks m where c.courseid = m.courseid and m.userid=?";
 
 @end

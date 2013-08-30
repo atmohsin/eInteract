@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.userId.text = @"test";
+    self.password.text = @"test";
+    self.userType.text = @"s";
 }
 
 - (void)didReceiveMemoryWarning

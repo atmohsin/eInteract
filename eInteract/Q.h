@@ -13,5 +13,6 @@
 }
 
 extern NSString *const SELECT_USER_PROFILE_FOR_USERID;
+extern NSString *const SELECT_COURSE_MARKS;
 
 @end

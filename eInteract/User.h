@@ -12,6 +12,6 @@
     
 }
 
-@property (nonatomic,retain) NSString *userId,*password,*userType,*fullName,*mobileNo;
+@property (nonatomic,retain) NSString *userId,*userName,*password,*userType,*fullName,*mobileNo;
 
 @end

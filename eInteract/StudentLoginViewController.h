@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 #import "ViewController.h"
+#import "StudentViewProfileViewController.h"
 
 
 @interface StudentLoginViewController : UIViewController{
@@ -20,5 +21,6 @@
 @property (nonatomic,retain) User *user;
 
 -(IBAction)signOut:(id)sender;
+-(IBAction)viewProfileBtn:(id)sender;
 
 @end

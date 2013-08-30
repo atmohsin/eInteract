@@ -73,16 +73,16 @@ static Database *instance = NULL;
     [fileManager copyItemAtPath:databasePathFromApp toPath:databasePath error:nil];
 }
 
--(BOOL) createUser:(NSString *)userid password:(NSString *)password usertype:(NSString *)usertype fullname:(NSString *)fullname mobileno:(NSString *)mobileno {
+-(BOOL) createUser:(NSString *)username password:(NSString *)password usertype:(NSString *)usertype fullname:(NSString *)fullname mobileno:(NSString *)mobileno {
     BOOL inserted = YES;
     sqlite3 *db;
     
     if(sqlite3_open([self.databasePath UTF8String], &db) == SQLITE_OK){
-        const char *sqlStatement = [@"insert into userprofile (userid,password,usertype,fullname,mobileno) values (?,?,?,?,?)" UTF8String];
+        const char *sqlStatement = [@"insert into users (username,password,usertype,fullname,mobileno) values (?,?,?,?,?)" UTF8String];
         sqlite3_stmt *compiledStatement;
         
         if (sqlite3_prepare_v2(db, sqlStatement, -1, &compiledStatement, nil) == SQLITE_OK) {
-            sqlite3_bind_text(compiledStatement, 1, [userid UTF8String], -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text(compiledStatement, 1, [username UTF8String], -1, SQLITE_TRANSIENT);
             sqlite3_bind_text(compiledStatement, 2, [password UTF8String], -1, SQLITE_TRANSIENT);
             sqlite3_bind_text(compiledStatement, 3, [usertype UTF8String], -1, SQLITE_TRANSIENT);
             sqlite3_bind_text(compiledStatement, 4, [fullname UTF8String], -1, SQLITE_TRANSIENT);
@@ -99,7 +99,7 @@ static Database *instance = NULL;
     return inserted;
 }
 
--(User *) getUser:(NSString *)userId {
+-(User *) getUser:(NSString *)userName {
     User *user = NULL;
     
     sqlite3 *db;
@@ -107,16 +107,17 @@ static Database *instance = NULL;
         const char *sqlStatement = [SELECT_USER_PROFILE_FOR_USERID UTF8String];
         sqlite3_stmt *compiledStatement;
         if(sqlite3_prepare_v2(db, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK)  {
-            sqlite3_bind_text(compiledStatement, 1, [userId UTF8String], -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text(compiledStatement, 1, [userName UTF8String], -1, SQLITE_TRANSIENT);
             
             
             while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
                 user = [[User alloc]init];
                 user.userId = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 0)];
-                user.password = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 1)];
-                user.userType = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 2)];
-                user.fullName = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 3)];
-                user.mobileNo = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 4)];
+                user.userName = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 1)];
+                user.password = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 2)];
+                user.userType = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 3)];
+                user.fullName = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 4)];
+                user.mobileNo = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 5)];
                 
                 break;
 			}
@@ -129,6 +130,35 @@ static Database *instance = NULL;
     //Close the database
     sqlite3_close(db);
     return user;
+}
+
+-(Marks *) getCourseMakrs:(NSString *)userId {
+    Marks *marks = NULL;
+    sqlite3 *db;
+    if(sqlite3_open([self.databasePath UTF8String], &db) == SQLITE_OK){
+        const char *sqlStatement = [SELECT_COURSE_MARKS UTF8String];
+        sqlite3_stmt *compiledStatement;
+        
+        if (sqlite3_prepare_v2(db, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+            sqlite3_bind_text(compiledStatement,1,[userId UTF8String], -1, SQLITE_TRANSIENT);
+        
+        
+        while (sqlite3_step(compiledStatement) == SQLITE_ROW) {
+            marks = [[Marks alloc]init];
+            marks.courseName = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 0)];
+            marks.marks = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 1)];
+            break;
+        }
+        }
+        //Release the compiled statement from memory
+        sqlite3_finalize(compiledStatement);
+    }
+    else {
+        NSLog(@"getCourseMarks Errpr : %@ ",[NSString stringWithUTF8String:sqlite3_errmsg(db)]);
+    }
+    //close the database
+    sqlite3_close(db);
+    return marks;
 }
 
 

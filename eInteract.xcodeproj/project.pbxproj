@@ -18,6 +18,9 @@
 		6B910FA317C6407E009A80A8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B910FA117C6407E009A80A8 /* LoginViewController.xib */; };
 		6B910FA717C6583A009A80A8 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B910FA517C6583A009A80A8 /* RegistrationViewController.m */; };
 		6B910FA817C6583A009A80A8 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B910FA617C6583A009A80A8 /* RegistrationViewController.xib */; };
+		6BCB340A17D06A96000A188C /* Marks.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB340917D06A96000A188C /* Marks.m */; };
+		6BD13E2D17CE7214005E4CDA /* StudentViewProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD13E2B17CE7214005E4CDA /* StudentViewProfileViewController.m */; };
+		6BD13E2E17CE7214005E4CDA /* StudentViewProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BD13E2C17CE7214005E4CDA /* StudentViewProfileViewController.xib */; };
 		6BD6179917CB5F4700674E6C /* TeacherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD6179717CB5F4700674E6C /* TeacherLoginViewController.m */; };
 		6BD6179A17CB5F4700674E6C /* TeacherLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BD6179817CB5F4700674E6C /* TeacherLoginViewController.xib */; };
 		6BD6179D17CB7C1D00674E6C /* M.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD6179C17CB7C1D00674E6C /* M.m */; };
@@ -53,6 +56,11 @@
 		6B910FA417C6583A009A80A8 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		6B910FA517C6583A009A80A8 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		6B910FA617C6583A009A80A8 /* RegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		6BCB340817D06A96000A188C /* Marks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marks.h; sourceTree = "<group>"; };
+		6BCB340917D06A96000A188C /* Marks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marks.m; sourceTree = "<group>"; };
+		6BD13E2A17CE7214005E4CDA /* StudentViewProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentViewProfileViewController.h; sourceTree = "<group>"; };
+		6BD13E2B17CE7214005E4CDA /* StudentViewProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentViewProfileViewController.m; sourceTree = "<group>"; };
+		6BD13E2C17CE7214005E4CDA /* StudentViewProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentViewProfileViewController.xib; sourceTree = "<group>"; };
 		6BD6179617CB5F4700674E6C /* TeacherLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherLoginViewController.h; sourceTree = "<group>"; };
 		6BD6179717CB5F4700674E6C /* TeacherLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherLoginViewController.m; sourceTree = "<group>"; };
 		6BD6179817CB5F4700674E6C /* TeacherLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeacherLoginViewController.xib; sourceTree = "<group>"; };
@@ -120,6 +128,8 @@
 				6B910FA017C6407E009A80A8 /* LoginViewController.m */,
 				6BD6179B17CB7C1D00674E6C /* M.h */,
 				6BD6179C17CB7C1D00674E6C /* M.m */,
+				6BD13E2A17CE7214005E4CDA /* StudentViewProfileViewController.h */,
+				6BD13E2B17CE7214005E4CDA /* StudentViewProfileViewController.m */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -127,6 +137,7 @@
 		6B084B8017C79472000DC3D6 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				6BD13E2C17CE7214005E4CDA /* StudentViewProfileViewController.xib */,
 				6B084B8817C7D8E3000DC3D6 /* StudentLoginViewController.xib */,
 				6B910FA617C6583A009A80A8 /* RegistrationViewController.xib */,
 				6B910FA117C6407E009A80A8 /* LoginViewController.xib */,
@@ -147,6 +158,8 @@
 			children = (
 				6B084B8317C7AFDF000DC3D6 /* User.h */,
 				6B084B8417C7AFDF000DC3D6 /* User.m */,
+				6BCB340817D06A96000A188C /* Marks.h */,
+				6BCB340917D06A96000A188C /* Marks.m */,
 			);
 			name = BusinessObjects;
 			sourceTree = "<group>";
@@ -284,6 +297,7 @@
 				6B084B7717C76D29000DC3D6 /* eInteractdb.sqlite in Resources */,
 				6B084B8A17C7D8E3000DC3D6 /* StudentLoginViewController.xib in Resources */,
 				6BD6179A17CB5F4700674E6C /* TeacherLoginViewController.xib in Resources */,
+				6BD13E2E17CE7214005E4CDA /* StudentViewProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +320,8 @@
 				6BD6179917CB5F4700674E6C /* TeacherLoginViewController.m in Sources */,
 				6BD6179D17CB7C1D00674E6C /* M.m in Sources */,
 				6BD617A117CB9C5D00674E6C /* U.m in Sources */,
+				6BD13E2D17CE7214005E4CDA /* StudentViewProfileViewController.m in Sources */,
+				6BCB340A17D06A96000A188C /* Marks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

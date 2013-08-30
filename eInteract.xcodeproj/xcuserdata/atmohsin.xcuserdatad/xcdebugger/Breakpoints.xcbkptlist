@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "eInteract/StudentLoginViewController.h"
-         timestampString = "399309697.994645"
+         timestampString = "399406792.128682"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "24"
-         endingLineNumber = "24"
+         startingLineNumber = "26"
+         endingLineNumber = "26"
          landmarkName = "@interface StudentLoginViewController"
          landmarkType = "2">
       </FileBreakpoint>

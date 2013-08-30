@@ -45,7 +45,7 @@
 
 -(User *)populateUser{
     User *user = [[User alloc]init];
-    user.userId = self.emailId.text;
+    user.userName = self.emailId.text;
     user.password = self.password.text;
     user.userType = @"S";
     user.fullName = self.fullName.text;
@@ -55,11 +55,15 @@
     
 }
 
+- (IBAction)cancelBtn:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(IBAction)submitBtn:(id)sender{
     Database *db = [Database INSTANCE];
     User *user = [self populateUser];
     
-    [db createUser:user.userId password:user.password usertype:user.userType fullname:user.fullName mobileno:user.mobileNo];
+    [db createUser:user.userName password:user.password usertype:user.userType fullname:user.fullName mobileno:user.mobileNo];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

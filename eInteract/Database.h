@@ -10,6 +10,7 @@
 #import <sqlite3.h>
 #import "Q.h"
 #import "User.h"
+#import "Marks.h"
 
 @interface Database : NSObject{
     
@@ -25,13 +26,14 @@
 +(Database *)INSTANCE;
 +(void)CreateInstance;
 
--(BOOL) createUser : (NSString *)userid
+-(BOOL) createUser : (NSString *)username
 password : (NSString *) password
 usertype : (NSString *) usertype
 fullname : (NSString *) fullname
           mobileno : (NSString *) mobileno;
 
--(User *)getUser :(NSString *) userId;
+-(User *)getUser :(NSString *) userName;
+-(Marks *)getCourseMakrs : (NSString *)userId;
 
 
 @end

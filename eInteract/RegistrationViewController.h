@@ -21,5 +21,6 @@
 
 -(IBAction)submitBtn:(id)sender;
 -(User *)populateUser;
+- (IBAction)cancelBtn:(id)sender;
 
 @end
