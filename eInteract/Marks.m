@@ -9,6 +9,7 @@
 #import "Marks.h"
 
 @implementation Marks
-@synthesize courseName,marks;
+@synthesize courseName,marks,userId,fullName;
+
 
 @end

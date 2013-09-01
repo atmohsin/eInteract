@@ -55,5 +55,11 @@
     [self.navigationController pushViewController:studentProfileViewController animated:YES];
 }
 
+-(IBAction)assessTest:(id)sender{
+    AssesTestViewController *assessTestControll = [[AssesTestViewController alloc]initWithNibName:@"AssesTestViewController" bundle:nil];
+    assessTestControll.user = self.user;
+    [self.navigationController pushViewController:assessTestControll animated:YES];
+}
+
 
 @end

@@ -14,5 +14,9 @@
 
 extern NSString *const SELECT_USER_PROFILE_FOR_USERID;
 extern NSString *const SELECT_COURSE_MARKS;
+extern NSString *const SELECT_STUDENTS_COURSE_MARKS;
+extern NSString *const SELECT_ENROL_COURSE_ID;
+extern NSString *const SELECT_ASSESS_TEST;
+extern NSString *const SELECT_TEST_QUEST;
 
 @end

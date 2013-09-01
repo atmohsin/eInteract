@@ -161,5 +161,131 @@ static Database *instance = NULL;
     return marks;
 }
 
+-(NSMutableArray *) getAllStudentsCourseMarks {
+    NSMutableArray *studentsList = nil;
+    
+    
+    sqlite3 *db;
+    if(sqlite3_open([self.databasePath UTF8String], &db) == SQLITE_OK){
+        studentsList = [NSMutableArray array];
+        
+        const char *sqlStatement = [SELECT_STUDENTS_COURSE_MARKS UTF8String];
+        sqlite3_stmt *compiledStatement;
+        
+        if (sqlite3_prepare_v2(db, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+                        
+            while (sqlite3_step(compiledStatement) == SQLITE_ROW) {
+                Marks *marks = [[Marks alloc]init];
+                marks.courseName = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 0)];
+                marks.marks = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 1)];
+                marks.userId = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 2)];
+                marks.fullName = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 3)];
+                [studentsList addObject:marks];
+            }
+        }
+        //Release the compiled statement from memory
+        sqlite3_finalize(compiledStatement);
+    }
+    else {
+        NSLog(@"getCourseMarks Errpr : %@ ",[NSString stringWithUTF8String:sqlite3_errmsg(db)]);
+    }
+    //close the database
+    sqlite3_close(db);
+    return studentsList;
+}
+
+-(NSString *) getEnrolCourseId:(NSString *)userId {
+    NSString *courseId = nil;
+    
+    sqlite3 *db;
+    if(sqlite3_open([self.databasePath UTF8String], &db) == SQLITE_OK){
+        
+        const char *sqlStatement = [SELECT_ENROL_COURSE_ID UTF8String];
+        sqlite3_stmt *compiledStatement;
+        
+        if (sqlite3_prepare_v2(db, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+            sqlite3_bind_text(compiledStatement,1,[userId UTF8String], -1, SQLITE_TRANSIENT);
+            
+            
+            while (sqlite3_step(compiledStatement) == SQLITE_ROW) {
+                courseId = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 0)];
+                break;
+            }
+        }
+        //Release the compiled statement from memory
+        sqlite3_finalize(compiledStatement);
+            
+    }
+    else {
+        NSLog(@"getEnrolCourseId Errpr : %@ ",[NSString stringWithUTF8String:sqlite3_errmsg(db)]);
+    }
+    //close the database
+    sqlite3_close(db);
+    return courseId;
+    
+}
+
+-(AssessTest *) getAssessTest:(NSString *)courseId {
+    AssessTest *assessTest = NULL;
+    
+    sqlite3 *db;
+    if(sqlite3_open([self.databasePath UTF8String], &db) == SQLITE_OK) {
+        const char *sqlStatement = [SELECT_ASSESS_TEST UTF8String];
+        sqlite3_stmt *compiledStatement;
+        if(sqlite3_prepare_v2(db, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK)  {
+            sqlite3_bind_text(compiledStatement, 1, [courseId UTF8String], -1, SQLITE_TRANSIENT);
+            
+            
+            while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+                assessTest = [[AssessTest alloc]init];
+                assessTest.subject = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 0)];
+                assessTest.questions = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 1)];
+                assessTest.duration = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 2)];
+                assessTest.testId = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 3)];
+                
+                break;
+			}
+        }
+        // Release the compiled statement from memory
+        sqlite3_finalize(compiledStatement);
+    } else {
+        NSLog(@"getAssessTest Error: %@", [NSString stringWithUTF8String:sqlite3_errmsg(db)]);
+    }
+    //Close the database
+    sqlite3_close(db);
+    return assessTest;
+}
+
+-(NSMutableArray *) getQuestForTest:(NSString *)testId {
+    NSMutableArray *questions = nil;
+    
+    
+    sqlite3 *db;
+    if(sqlite3_open([self.databasePath UTF8String], &db) == SQLITE_OK){
+        questions = [NSMutableArray array];
+        
+        const char *sqlStatement = [SELECT_TEST_QUEST UTF8String];
+        sqlite3_stmt *compiledStatement;
+        
+        if (sqlite3_prepare_v2(db, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+            sqlite3_bind_text(compiledStatement, 1, [testId UTF8String], -1, SQLITE_TRANSIENT);
+            while (sqlite3_step(compiledStatement) == SQLITE_ROW) {
+                Quest *quest = [[Quest alloc]init];
+                quest.qid = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 0)];
+                quest.name = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 1)];
+                [questions addObject:quest];
+            }
+        }
+        //Release the compiled statement from memory
+        sqlite3_finalize(compiledStatement);
+    }
+    else {
+        NSLog(@"getQuestForTest Errpr : %@ ",[NSString stringWithUTF8String:sqlite3_errmsg(db)]);
+    }
+    //close the database
+    sqlite3_close(db);
+    return questions;
+}
+
 
 @end

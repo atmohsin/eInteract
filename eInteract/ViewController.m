@@ -20,6 +20,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+UIColor *color = [UIColor colorWithRed:226/255.0f green:4/255.0f blue:6/255.0f alpha:1.0f];
+    self.navigationController.navigationBar.tintColor = color;
+    self.title = @"eInteract";
+
 }
 
 - (void)didReceiveMemoryWarning

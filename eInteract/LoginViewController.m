@@ -30,6 +30,7 @@
     self.userId.text = @"test";
     self.password.text = @"test";
     self.userType.text = @"s";
+    self.title = @"Login";
 }
 
 - (void)didReceiveMemoryWarning

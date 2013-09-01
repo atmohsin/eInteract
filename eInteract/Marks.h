@@ -12,7 +12,7 @@
     
 }
 
-@property (nonatomic,retain) NSString *courseName,*marks;
+@property (nonatomic,retain) NSString *courseName,*marks,*userId,*fullName;
 
 
 @end

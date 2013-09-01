@@ -11,6 +11,8 @@
 #import "Q.h"
 #import "User.h"
 #import "Marks.h"
+#import "AssessTest.h"
+#import "Quest.h"
 
 @interface Database : NSObject{
     
@@ -34,6 +36,10 @@ fullname : (NSString *) fullname
 
 -(User *)getUser :(NSString *) userName;
 -(Marks *)getCourseMakrs : (NSString *)userId;
+-(NSMutableArray *)getAllStudentsCourseMarks;
+-(NSString *) getEnrolCourseId:(NSString *)userId;
+-(AssessTest *) getAssessTest:(NSString *)courseId;
+-(Quest *)getQuestForTest:(NSString *)testId;
 
 
 @end

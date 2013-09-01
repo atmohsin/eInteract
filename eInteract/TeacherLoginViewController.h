@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewController.h"
+#import "TeachersViewProfileViewController.h"
 
-@interface TeacherLoginViewController : UIViewController
+@interface TeacherLoginViewController : UIViewController {
+    
+}
+
+
+-(IBAction)signOut:(id)sender;
+-(IBAction)viewProfileBtn:(id)sender;
 
 @end

@@ -37,4 +37,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)signOut:(id)sender{
+    
+    NSArray *viewControllers = [[self navigationController] viewControllers];
+    for( int i=0;i<[viewControllers count];i++){
+        id obj=[viewControllers objectAtIndex:i];
+        if([obj isKindOfClass:[ViewController class]]){
+            [[self navigationController] popToViewController:obj animated:YES];
+            return;
+        }
+    }
+}
+
+-(IBAction)viewProfileBtn:(id)sender {
+    TeachersViewProfileViewController *teacherProfileViewController = [[TeachersViewProfileViewController alloc]initWithNibName:@"TeachersViewProfileViewController" bundle:nil];
+    [self.navigationController pushViewController:teacherProfileViewController animated:YES];
+}
+
 @end
