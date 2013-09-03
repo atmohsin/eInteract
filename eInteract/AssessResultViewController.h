@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StudentLoginViewController.h"
 
-@interface AssessResultViewController : UIViewController
+@interface AssessResultViewController : UIViewController {
+    
+}
+
+@property (nonatomic,retain) NSString *scoreValue;
+@property (nonatomic,retain) IBOutlet UILabel *scoreLbl;
+
+-(IBAction)homeBtn:(id)sender;
 
 @end

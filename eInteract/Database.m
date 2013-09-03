@@ -288,4 +288,37 @@ static Database *instance = NULL;
 }
 
 
+-(NSMutableArray *) getAnsOptoins:(NSString *)qId {
+    NSMutableArray *options = nil;
+    
+    
+    sqlite3 *db;
+    if(sqlite3_open([self.databasePath UTF8String], &db) == SQLITE_OK){
+        options = [NSMutableArray array];
+        
+        const char *sqlStatement = [SELECT_QUEST_OPT UTF8String];
+        sqlite3_stmt *compiledStatement;
+        
+        if (sqlite3_prepare_v2(db, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+            sqlite3_bind_text(compiledStatement, 1, [qId UTF8String], -1, SQLITE_TRANSIENT);
+            while (sqlite3_step(compiledStatement) == SQLITE_ROW) {
+                AnsOptions *opt = [[AnsOptions alloc]init];
+                opt.optid = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 0)];
+                opt.name = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 1)];
+                opt.iscorrect = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 2)];
+
+                [options addObject:opt];
+            }
+        }
+        //Release the compiled statement from memory
+        sqlite3_finalize(compiledStatement);
+    }
+    else {
+        NSLog(@"getAnsOptoins Errpr : %@ ",[NSString stringWithUTF8String:sqlite3_errmsg(db)]);
+    }
+    //close the database
+    sqlite3_close(db);
+    return options;
+}
+
 @end

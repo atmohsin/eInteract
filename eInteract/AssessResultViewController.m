@@ -27,12 +27,18 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.scoreLbl.text = self.scoreValue;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)homeBtn:(id)sender{
+    StudentLoginViewController *studentController = [[StudentLoginViewController alloc]initWithNibName:@"StudentLoginViewController" bundle:nil];
+    [self.navigationController pushViewController:studentController animated:YES];
 }
 
 @end

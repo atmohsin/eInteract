@@ -19,6 +19,13 @@
 		6B910FA317C6407E009A80A8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B910FA117C6407E009A80A8 /* LoginViewController.xib */; };
 		6B910FA717C6583A009A80A8 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B910FA517C6583A009A80A8 /* RegistrationViewController.m */; };
 		6B910FA817C6583A009A80A8 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B910FA617C6583A009A80A8 /* RegistrationViewController.xib */; };
+		6B9B8DEC17D4DF53001FB0F9 /* GSRadioButtonSetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B8DEB17D4DF53001FB0F9 /* GSRadioButtonSetController.m */; };
+		6B9B8DF217D4E652001FB0F9 /* button-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9B8DED17D4E652001FB0F9 /* button-off.png */; };
+		6B9B8DF317D4E652001FB0F9 /* button-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9B8DEE17D4E652001FB0F9 /* button-off@2x.png */; };
+		6B9B8DF417D4E652001FB0F9 /* button-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9B8DEF17D4E652001FB0F9 /* button-on.png */; };
+		6B9B8DF517D4E652001FB0F9 /* button-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9B8DF017D4E652001FB0F9 /* button-on@2x.png */; };
+		6B9B8DF617D4E652001FB0F9 /* button.opacity in Resources */ = {isa = PBXBuildFile; fileRef = 6B9B8DF117D4E652001FB0F9 /* button.opacity */; };
+		6B9B8DFC17D50C11001FB0F9 /* AnsOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B8DFB17D50C11001FB0F9 /* AnsOptions.m */; };
 		6BCB340A17D06A96000A188C /* Marks.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB340917D06A96000A188C /* Marks.m */; };
 		6BCD7C3217D0E2C1009BDFA3 /* TeachersViewProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD7C3017D0E2C1009BDFA3 /* TeachersViewProfileViewController.m */; };
 		6BCD7C3317D0E2C1009BDFA3 /* TeachersViewProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BCD7C3117D0E2C1009BDFA3 /* TeachersViewProfileViewController.xib */; };
@@ -68,6 +75,15 @@
 		6B910FA417C6583A009A80A8 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		6B910FA517C6583A009A80A8 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		6B910FA617C6583A009A80A8 /* RegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		6B9B8DEA17D4DF53001FB0F9 /* GSRadioButtonSetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSRadioButtonSetController.h; sourceTree = "<group>"; };
+		6B9B8DEB17D4DF53001FB0F9 /* GSRadioButtonSetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSRadioButtonSetController.m; sourceTree = "<group>"; };
+		6B9B8DED17D4E652001FB0F9 /* button-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-off.png"; sourceTree = "<group>"; };
+		6B9B8DEE17D4E652001FB0F9 /* button-off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-off@2x.png"; sourceTree = "<group>"; };
+		6B9B8DEF17D4E652001FB0F9 /* button-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-on.png"; sourceTree = "<group>"; };
+		6B9B8DF017D4E652001FB0F9 /* button-on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-on@2x.png"; sourceTree = "<group>"; };
+		6B9B8DF117D4E652001FB0F9 /* button.opacity */ = {isa = PBXFileReference; lastKnownFileType = file; path = button.opacity; sourceTree = "<group>"; };
+		6B9B8DFA17D50C11001FB0F9 /* AnsOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnsOptions.h; sourceTree = "<group>"; };
+		6B9B8DFB17D50C11001FB0F9 /* AnsOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnsOptions.m; sourceTree = "<group>"; };
 		6BCB340817D06A96000A188C /* Marks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marks.h; sourceTree = "<group>"; };
 		6BCB340917D06A96000A188C /* Marks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marks.m; sourceTree = "<group>"; };
 		6BCD7C2F17D0E2C1009BDFA3 /* TeachersViewProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeachersViewProfileViewController.h; sourceTree = "<group>"; };
@@ -187,6 +203,11 @@
 		6B084B8117C79487000DC3D6 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6B9B8DED17D4E652001FB0F9 /* button-off.png */,
+				6B9B8DEE17D4E652001FB0F9 /* button-off@2x.png */,
+				6B9B8DEF17D4E652001FB0F9 /* button-on.png */,
+				6B9B8DF017D4E652001FB0F9 /* button-on@2x.png */,
+				6B9B8DF117D4E652001FB0F9 /* button.opacity */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -202,6 +223,8 @@
 				6BE8A2BD17D272780023B2A3 /* AssessTest.m */,
 				6B2CEB0317D3540C00377712 /* Quest.h */,
 				6B2CEB0417D3540C00377712 /* Quest.m */,
+				6B9B8DFA17D50C11001FB0F9 /* AnsOptions.h */,
+				6B9B8DFB17D50C11001FB0F9 /* AnsOptions.m */,
 			);
 			name = BusinessObjects;
 			sourceTree = "<group>";
@@ -209,6 +232,8 @@
 		6BD6179E17CB9C2900674E6C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				6B9B8DEA17D4DF53001FB0F9 /* GSRadioButtonSetController.h */,
+				6B9B8DEB17D4DF53001FB0F9 /* GSRadioButtonSetController.m */,
 				6BD6179F17CB9C5D00674E6C /* U.h */,
 				6BD617A017CB9C5D00674E6C /* U.m */,
 			);
@@ -344,6 +369,11 @@
 				6BE8A2BB17D258660023B2A3 /* AssesTestViewController.xib in Resources */,
 				6BE8A2C317D27B900023B2A3 /* AssessQuestViewController.xib in Resources */,
 				6BE8A2C817D27CB10023B2A3 /* AssessResultViewController.xib in Resources */,
+				6B9B8DF217D4E652001FB0F9 /* button-off.png in Resources */,
+				6B9B8DF317D4E652001FB0F9 /* button-off@2x.png in Resources */,
+				6B9B8DF417D4E652001FB0F9 /* button-on.png in Resources */,
+				6B9B8DF517D4E652001FB0F9 /* button-on@2x.png in Resources */,
+				6B9B8DF617D4E652001FB0F9 /* button.opacity in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +404,8 @@
 				6BE8A2C217D27B900023B2A3 /* AssessQuestViewController.m in Sources */,
 				6BE8A2C717D27CB10023B2A3 /* AssessResultViewController.m in Sources */,
 				6B2CEB0517D3540C00377712 /* Quest.m in Sources */,
+				6B9B8DEC17D4DF53001FB0F9 /* GSRadioButtonSetController.m in Sources */,
+				6B9B8DFC17D50C11001FB0F9 /* AnsOptions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
