@@ -40,6 +40,9 @@
         self.durations.text = self.assessTest.duration;
     }
     
+    UIBarButtonItem *startButton = [[UIBarButtonItem alloc] initWithTitle:@"Start" style:UIBarButtonItemStylePlain target:self action:@selector(startBtn:)];
+    self.navigationItem.rightBarButtonItem = startButton;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,6 +54,7 @@
 -(IBAction)startBtn:(id)sender{
     AssessQuestViewController *questController = [[AssessQuestViewController alloc]initWithNibName:@"AssessQuestViewController" bundle:nil];
     questController.assessTest = self.assessTest;
+    questController.user = self.user;
     [self.navigationController pushViewController:questController animated:YES];
 }
 

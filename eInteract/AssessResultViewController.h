@@ -15,6 +15,7 @@
 
 @property (nonatomic,retain) NSString *scoreValue;
 @property (nonatomic,retain) IBOutlet UILabel *scoreLbl;
+@property (nonatomic,retain) User *user;
 
 -(IBAction)homeBtn:(id)sender;
 

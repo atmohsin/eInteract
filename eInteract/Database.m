@@ -147,6 +147,7 @@ static Database *instance = NULL;
             marks = [[Marks alloc]init];
             marks.courseName = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 0)];
             marks.marks = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 1)];
+            marks.courseId = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 2)];
             break;
         }
         }
@@ -242,7 +243,8 @@ static Database *instance = NULL;
                 assessTest.questions = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 1)];
                 assessTest.duration = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 2)];
                 assessTest.testId = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 3)];
-                
+                assessTest.courseId = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 4)];
+    
                 break;
 			}
         }
@@ -319,6 +321,68 @@ static Database *instance = NULL;
     //close the database
     sqlite3_close(db);
     return options;
+}
+
+-(void)insertUpdateMarks:(Marks *)marks{
+    NSString *strCount = [[NSString alloc]init];
+    
+    sqlite3 *db;
+    if(sqlite3_open([self.databasePath UTF8String], &db) == SQLITE_OK){
+        
+        const char *sqlStatement = [@"select count(*) from marks where userid = ?" UTF8String];
+        sqlite3_stmt *compiledStatement;
+        
+        if (sqlite3_prepare_v2(db, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+            sqlite3_bind_text(compiledStatement, 1, [marks.userId UTF8String], -1, SQLITE_TRANSIENT);
+            while (sqlite3_step(compiledStatement) == SQLITE_ROW) {
+                
+                strCount = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 0)];
+                NSLog(@" The count is %@",strCount);
+            }
+        }
+        //Release the compiled statement from memory
+        sqlite3_finalize(compiledStatement);
+        
+        const char *strSql = nil;
+        sqlite3_stmt *compiledStatementInstUpdate;
+        
+        if([strCount isEqualToString:@"0"]){
+            strSql = [@"insert into marks (marks,userid,courseid) values (?,?,?)" UTF8String];
+            
+            if(sqlite3_prepare_v2(db, strSql, -1, &compiledStatementInstUpdate, NULL) == SQLITE_OK)  {
+                sqlite3_bind_text(compiledStatementInstUpdate, 1, [marks.marks UTF8String], -1, SQLITE_TRANSIENT);
+                sqlite3_bind_text(compiledStatementInstUpdate, 2, [marks.userId UTF8String], -1, SQLITE_TRANSIENT);
+                sqlite3_bind_text(compiledStatementInstUpdate, 3, [marks.courseId UTF8String], -1, SQLITE_TRANSIENT);
+                if(sqlite3_step(compiledStatement) != SQLITE_DONE ) {
+                    NSLog( @" Error while inserting marks: %s", sqlite3_errmsg(db) );
+                }
+                sqlite3_finalize(compiledStatementInstUpdate);
+            }
+        }
+        else {
+            strSql = [@"update marks set marks = ? where userid = ?" UTF8String];
+            sqlite3_stmt *compiledStatementInstUpdate;
+            if(sqlite3_prepare_v2(db, strSql, -1, &compiledStatementInstUpdate, NULL) == SQLITE_OK)  {
+                
+                sqlite3_bind_int(compiledStatementInstUpdate, 1, [marks.marks intValue]);
+                sqlite3_bind_int(compiledStatementInstUpdate, 2, [marks.userId intValue]);
+
+                if(sqlite3_step(compiledStatementInstUpdate) != SQLITE_DONE ) {
+                    NSLog( @" Error while updating marks: %s", sqlite3_errmsg(db) );
+                }
+                sqlite3_finalize(compiledStatementInstUpdate);
+            }
+        }
+        
+        
+        
+    }
+    else {
+        NSLog(@"insertUpdateMarks Errpr : %@ ",[NSString stringWithUTF8String:sqlite3_errmsg(db)]);
+    }
+    //close the database
+    sqlite3_close(db);
+    
 }
 
 @end

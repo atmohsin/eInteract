@@ -10,6 +10,6 @@
 
 @implementation AssessTest
 
-@synthesize subject,questions,duration,testId;
+@synthesize subject,questions,duration,testId,courseId;
 
 @end

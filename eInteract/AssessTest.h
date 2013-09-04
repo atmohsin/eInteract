@@ -12,6 +12,6 @@
     
 }
 
-@property (nonatomic,retain) NSString *subject,*questions,*duration,*testId;
+@property (nonatomic,retain) NSString *subject,*questions,*duration,*testId,*courseId;
 
 @end

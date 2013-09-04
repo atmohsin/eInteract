@@ -28,6 +28,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.scoreLbl.text = self.scoreValue;
+    self.title = @"Result";
+    
+    UIBarButtonItem *homeButton = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStylePlain target:self action:@selector(homeBtn:)];
+    self.navigationItem.rightBarButtonItem = homeButton;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,6 +43,7 @@
 
 -(IBAction)homeBtn:(id)sender{
     StudentLoginViewController *studentController = [[StudentLoginViewController alloc]initWithNibName:@"StudentLoginViewController" bundle:nil];
+    studentController.user = self.user;
     [self.navigationController pushViewController:studentController animated:YES];
 }
 

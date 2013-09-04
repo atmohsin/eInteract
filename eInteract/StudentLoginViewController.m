@@ -29,6 +29,9 @@
     // Do any additional setup after loading the view from its nib.
     [self.navigationItem setHidesBackButton:YES animated:YES];
     self.userName.text = self.user.fullName;
+    
+    UIBarButtonItem *signOutButton = [[UIBarButtonItem alloc] initWithTitle:@"Sign Out" style:UIBarButtonItemStylePlain target:self action:@selector(signOut:)];
+    self.navigationItem.rightBarButtonItem = signOutButton;
 }
 
 - (void)didReceiveMemoryWarning

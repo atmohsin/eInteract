@@ -13,11 +13,16 @@
 #import "TeacherLoginViewController.h"
 #import "M.h"
 #import "U.h"
+#import "UserTypeCell.h"
 
-@interface LoginViewController : UIViewController{
+@interface LoginViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>{
+    NSString *userType;
+    UserTypeCell *cell;
     
 }
 
+@property (strong,nonatomic) NSArray *name;
+@property (strong,nonatomic) NSArray *icons;
 @property (nonatomic,retain) IBOutlet UITextField *userId;
 @property (nonatomic,retain) IBOutlet UITextField *password;
 @property (nonatomic,retain) IBOutlet UITextField *userType;

@@ -20,8 +20,6 @@
 
 @property (nonatomic,retain) IBOutlet UILabel *qno;
 @property (nonatomic,retain) IBOutlet UILabel *qeustion;
-@property (nonatomic,retain) IBOutlet UIButton *nextBtn;
-@property (nonatomic,retain) IBOutlet UIButton *submitBtn;
 @property (nonatomic,retain) IBOutlet UILabel *optionLbl1;
 @property (nonatomic,retain) IBOutlet UILabel *optionLbl2;
 @property (nonatomic,retain) IBOutlet UILabel *optionLbl3;
@@ -39,6 +37,7 @@
 @property (nonatomic,retain) IBOutlet UIButton *radioBtn2;
 @property (nonatomic,retain) IBOutlet UIButton *radioBtn3;
 @property (nonatomic,retain) IBOutlet UIButton *radioBtn4;
+@property (nonatomic,retain) User *user;
 
 
 

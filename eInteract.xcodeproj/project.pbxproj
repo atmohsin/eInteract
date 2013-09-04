@@ -27,6 +27,11 @@
 		6B9B8DF617D4E652001FB0F9 /* button.opacity in Resources */ = {isa = PBXBuildFile; fileRef = 6B9B8DF117D4E652001FB0F9 /* button.opacity */; };
 		6B9B8DFC17D50C11001FB0F9 /* AnsOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B8DFB17D50C11001FB0F9 /* AnsOptions.m */; };
 		6BCB340A17D06A96000A188C /* Marks.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB340917D06A96000A188C /* Marks.m */; };
+		6BCC874017D755C70003E0C0 /* Ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BCC873D17D755C70003E0C0 /* Ok.png */; };
+		6BCC874117D755C70003E0C0 /* Student.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BCC873E17D755C70003E0C0 /* Student.png */; };
+		6BCC874217D755C70003E0C0 /* Teacher.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BCC873F17D755C70003E0C0 /* Teacher.png */; };
+		6BCC874517D756810003E0C0 /* UserTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC874417D756810003E0C0 /* UserTypeCell.m */; };
+		6BCC874717D756950003E0C0 /* UserTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BCC874617D756950003E0C0 /* UserTypeCell.xib */; };
 		6BCD7C3217D0E2C1009BDFA3 /* TeachersViewProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCD7C3017D0E2C1009BDFA3 /* TeachersViewProfileViewController.m */; };
 		6BCD7C3317D0E2C1009BDFA3 /* TeachersViewProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BCD7C3117D0E2C1009BDFA3 /* TeachersViewProfileViewController.xib */; };
 		6BD13E2D17CE7214005E4CDA /* StudentViewProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD13E2B17CE7214005E4CDA /* StudentViewProfileViewController.m */; };
@@ -86,6 +91,12 @@
 		6B9B8DFB17D50C11001FB0F9 /* AnsOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnsOptions.m; sourceTree = "<group>"; };
 		6BCB340817D06A96000A188C /* Marks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marks.h; sourceTree = "<group>"; };
 		6BCB340917D06A96000A188C /* Marks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marks.m; sourceTree = "<group>"; };
+		6BCC873D17D755C70003E0C0 /* Ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ok.png; sourceTree = "<group>"; };
+		6BCC873E17D755C70003E0C0 /* Student.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Student.png; sourceTree = "<group>"; };
+		6BCC873F17D755C70003E0C0 /* Teacher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Teacher.png; sourceTree = "<group>"; };
+		6BCC874317D756810003E0C0 /* UserTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTypeCell.h; sourceTree = "<group>"; };
+		6BCC874417D756810003E0C0 /* UserTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTypeCell.m; sourceTree = "<group>"; };
+		6BCC874617D756950003E0C0 /* UserTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTypeCell.xib; sourceTree = "<group>"; };
 		6BCD7C2F17D0E2C1009BDFA3 /* TeachersViewProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeachersViewProfileViewController.h; sourceTree = "<group>"; };
 		6BCD7C3017D0E2C1009BDFA3 /* TeachersViewProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeachersViewProfileViewController.m; sourceTree = "<group>"; };
 		6BCD7C3117D0E2C1009BDFA3 /* TeachersViewProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeachersViewProfileViewController.xib; sourceTree = "<group>"; };
@@ -187,6 +198,7 @@
 		6B084B8017C79472000DC3D6 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				6BCC874617D756950003E0C0 /* UserTypeCell.xib */,
 				6BE8A2C617D27CB00023B2A3 /* AssessResultViewController.xib */,
 				6BE8A2C117D27B900023B2A3 /* AssessQuestViewController.xib */,
 				6BE8A2B917D258660023B2A3 /* AssesTestViewController.xib */,
@@ -203,6 +215,9 @@
 		6B084B8117C79487000DC3D6 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6BCC873D17D755C70003E0C0 /* Ok.png */,
+				6BCC873E17D755C70003E0C0 /* Student.png */,
+				6BCC873F17D755C70003E0C0 /* Teacher.png */,
 				6B9B8DED17D4E652001FB0F9 /* button-off.png */,
 				6B9B8DEE17D4E652001FB0F9 /* button-off@2x.png */,
 				6B9B8DEF17D4E652001FB0F9 /* button-on.png */,
@@ -232,6 +247,8 @@
 		6BD6179E17CB9C2900674E6C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				6BCC874317D756810003E0C0 /* UserTypeCell.h */,
+				6BCC874417D756810003E0C0 /* UserTypeCell.m */,
 				6B9B8DEA17D4DF53001FB0F9 /* GSRadioButtonSetController.h */,
 				6B9B8DEB17D4DF53001FB0F9 /* GSRadioButtonSetController.m */,
 				6BD6179F17CB9C5D00674E6C /* U.h */,
@@ -374,6 +391,10 @@
 				6B9B8DF417D4E652001FB0F9 /* button-on.png in Resources */,
 				6B9B8DF517D4E652001FB0F9 /* button-on@2x.png in Resources */,
 				6B9B8DF617D4E652001FB0F9 /* button.opacity in Resources */,
+				6BCC874017D755C70003E0C0 /* Ok.png in Resources */,
+				6BCC874117D755C70003E0C0 /* Student.png in Resources */,
+				6BCC874217D755C70003E0C0 /* Teacher.png in Resources */,
+				6BCC874717D756950003E0C0 /* UserTypeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +427,7 @@
 				6B2CEB0517D3540C00377712 /* Quest.m in Sources */,
 				6B9B8DEC17D4DF53001FB0F9 /* GSRadioButtonSetController.m in Sources */,
 				6B9B8DFC17D50C11001FB0F9 /* AnsOptions.m in Sources */,
+				6BCC874517D756810003E0C0 /* UserTypeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

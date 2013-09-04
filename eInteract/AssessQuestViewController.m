@@ -36,7 +36,6 @@
     NSString *strQno = [NSString stringWithFormat:@"%d",counter+1];
     self.qno.text = strQno;
     self.qeustion.text = quest.name;
-    self.submitBtn.hidden = true;
     
     // Instantiate your GSRadioButtonSetController object
     self.radioButtonSetController = [[GSRadioButtonSetController alloc] init];
@@ -82,8 +81,21 @@
     opt4 = [self.options objectAtIndex:3];
     self.optionLbl4.text = opt4.name;
     
+    if(counter+1 == [self.questions count]){
+        
+        UIBarButtonItem *submitButton = [[UIBarButtonItem alloc] initWithTitle:@"Submit" style:UIBarButtonItemStylePlain target:self action:@selector(submitBtn:)];
+        self.navigationItem.rightBarButtonItem = submitButton;
+        
+    }
+    else {
+        UIBarButtonItem *nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(nextBtn:)];
+        self.navigationItem.rightBarButtonItem = nextButton;
+    }
+    
 }
 -(IBAction)nextBtn:(id)sender{
+
+    self.radioButtonSetController.selectedIndex = NSNotFound;
     self.radioBtn1.selected = NO;
     self.radioBtn2.selected = NO;
     self.radioBtn3.selected = NO;
@@ -115,8 +127,14 @@
     
     
     if(counter+1 == [self.questions count]){
-        self.nextBtn.hidden = TRUE;
-        self.submitBtn.hidden = FALSE;
+        
+        UIBarButtonItem *submitButton = [[UIBarButtonItem alloc] initWithTitle:@"Submit" style:UIBarButtonItemStylePlain target:self action:@selector(submitBtn:)];
+        self.navigationItem.rightBarButtonItem = submitButton;
+        
+    }
+    else {
+        UIBarButtonItem *nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(nextBtn:)];
+        self.navigationItem.rightBarButtonItem = nextButton;
     }
     
     
@@ -131,7 +149,17 @@
     NSLog(@" No of correct ans %d",noOfCorrectAns);
     int score = (noOfCorrectAns*100)/20;
     NSLog(@"The Score is %d",score);
-    resultController.scoreValue =  [NSString stringWithFormat:@"%d",score];;
+    NSString *scoreValue = [NSString stringWithFormat:@"%d",score];
+    
+    Database *db = [Database INSTANCE];
+    Marks *mObj = [[Marks alloc]init];
+    mObj.courseId = self.assessTest.courseId;
+    mObj.marks = scoreValue;
+    mObj.userId = self.user.userId;
+    [db insertUpdateMarks:mObj];
+    
+    resultController.scoreValue =  scoreValue;
+    resultController.user = self.user;
     [self.navigationController pushViewController:resultController animated:YES];
 }
 
