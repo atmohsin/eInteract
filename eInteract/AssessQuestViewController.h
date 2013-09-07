@@ -18,6 +18,12 @@
     
 }
 
+
+#define MAX_VALUE 10
+
+@property (assign,nonatomic) IBOutlet UILabel *counterLabel;
+@property (weak) NSTimer *timer;
+
 @property (nonatomic,retain) IBOutlet UILabel *qno;
 @property (nonatomic,retain) IBOutlet UILabel *qeustion;
 @property (nonatomic,retain) IBOutlet UILabel *optionLbl1;
@@ -39,10 +45,14 @@
 @property (nonatomic,retain) IBOutlet UIButton *radioBtn4;
 @property (nonatomic,retain) User *user;
 
+@property int hours, minutes, seconds,secondsLeft;
+
 
 
 
 -(IBAction)nextBtn:(id)sender;
 -(IBAction)submitBtn:(id)sender;
+-(void)updateCounter:(NSTimer *)theTimer;
+-(void)countdownTimer;
 
 @end

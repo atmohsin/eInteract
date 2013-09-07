@@ -67,14 +67,14 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 45.0;
+    return 44.0;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     cell=(UserTypeCell*)[tableView cellForRowAtIndexPath:indexPath];
     
-    userType= [[cell.label1.text substringToIndex:1] substringFromIndex:0];;
+    userType= [[cell.label1.text substringToIndex:1] substringFromIndex:0];
     [cell.image2 setHidden:NO];
     
 }
@@ -132,6 +132,7 @@
     }
     else {
         TeacherLoginViewController *teacherLoginController = [[TeacherLoginViewController alloc]initWithNibName:@"TeacherLoginViewController" bundle:nil];
+        [teacherLoginController setUser:user];
         [self.navigationController pushViewController:teacherLoginController animated:YES];
     }
 }

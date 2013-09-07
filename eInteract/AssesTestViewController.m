@@ -37,7 +37,7 @@
         self.assessTest = [db getAssessTest:courseId];
         self.subject.text = self.assessTest.subject;
         self.questions.text = self.assessTest.questions;
-        self.durations.text = self.assessTest.duration;
+        self.durations.text = [[NSString alloc]initWithFormat:@" %@ min ",self.assessTest.duration];
     }
     
     UIBarButtonItem *startButton = [[UIBarButtonItem alloc] initWithTitle:@"Start" style:UIBarButtonItemStylePlain target:self action:@selector(startBtn:)];

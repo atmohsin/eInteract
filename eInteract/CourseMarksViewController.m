@@ -1,18 +1,18 @@
 //
-//  TeachersViewProfileViewController.m
+//  CourseMarksViewController.m
 //  eInteract
 //
-//  Created by Mohsin Khan on 30/08/13.
+//  Created by Mohsin Khan on 05/09/13.
 //  Copyright (c) 2013 Codefrux Training. All rights reserved.
 //
 
-#import "TeachersViewProfileViewController.h"
+#import "CourseMarksViewController.h"
 
-@interface TeachersViewProfileViewController ()
+@interface CourseMarksViewController ()
 
 @end
 
-@implementation TeachersViewProfileViewController
+@implementation CourseMarksViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,14 +28,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    
     Database *db = [Database INSTANCE];
-    self.studentsList = [db getAllStudentsCourseMarks];
-    self.tableValues = [[NSArray alloc]initWithObjects:@"Select Student",@"Selected Course",@"Marks Obtained", nil];
-
+    self.marksCourseList = [db getCouseMarksForStudent:self.user.userId];
+    self.title = self.user.fullName;
 }
 
-
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"Cell";
@@ -45,45 +43,26 @@
         // allocate the cell:
         cell = [[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier];
         
-        // create a background image for the cell:
-        //UIImageView *bgView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        //[cell setBackgroundColor:[UIColor clearColor]];
-        //[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        //[cell setBackgroundView:bgView];
         [cell setIndentationWidth:0.0];
         
         // create a custom label:                                        x    y   width  height
         UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, 8.0, 300.0, 30.0)];
         [nameLabel setTag:1];
-        [nameLabel setBackgroundColor:[UIColor clearColor]]; // transparent label background
+        [nameLabel setBackgroundColor:[UIColor clearColor]];
         [nameLabel setFont:[UIFont boldSystemFontOfSize:17.0]];
-        // custom views should be added as subviews of the cell's contentView:
+        cell.backgroundColor=[UIColor whiteColor];
         [cell.contentView addSubview:nameLabel];
     }
     
-    tableView.backgroundView=nil;
-
-    
     // Configure the cell:
     //((UIImageView *)cell.backgroundView).image = [UIImage imageNamed:@"awardbg.png"];
-    [(UILabel *)[cell.contentView viewWithTag:1] setText:[self.tableValues objectAtIndex:indexPath.row]];
+    Marks *marksObj = [self.marksCourseList objectAtIndex:indexPath.row];
+    NSString *cellText = [[NSString alloc]initWithFormat:@" Course : %@  Marks : %@",marksObj.courseName,marksObj.marks];
+    [(UILabel *)[cell.contentView viewWithTag:1] setText:cellText];
     
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@" inside the didselect");
-    StudentListViewController *studentListController = [[StudentListViewController alloc]initWithNibName:@"StudentListViewController" bundle:nil];
-    [self.navigationController pushViewController:studentListController animated:YES];
-    
-}
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@" inside the diddselect");
-    
-    
-}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 60;
@@ -96,9 +75,8 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return [self.marksCourseList count];
 }
-
 
 - (void)didReceiveMemoryWarning
 {

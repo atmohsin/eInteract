@@ -43,6 +43,8 @@ fullname : (NSString *) fullname
 -(Quest *)getQuestForTest:(NSString *)testId;
 -(NSMutableArray *)getAnsOptoins:(NSString *)qId;
 -(void)insertUpdateMarks:(Marks *)marks;
+-(NSMutableArray *) getAllStudents;
+-(NSMutableArray *) getCouseMarksForStudent:(NSString *)userId;
 
 
 @end

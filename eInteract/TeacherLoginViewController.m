@@ -28,6 +28,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.navigationItem setHidesBackButton:YES animated:YES];
+    self.userName.text = self.user.fullName;
+    UIBarButtonItem *signOutButton = [[UIBarButtonItem alloc] initWithTitle:@"Sign Out" style:UIBarButtonItemStylePlain target:self action:@selector(signOut:)];
+    self.navigationItem.rightBarButtonItem = signOutButton;
+
 
 }
 
@@ -50,8 +54,8 @@
 }
 
 -(IBAction)viewProfileBtn:(id)sender {
-    TeachersViewProfileViewController *teacherProfileViewController = [[TeachersViewProfileViewController alloc]initWithNibName:@"TeachersViewProfileViewController" bundle:nil];
-    [self.navigationController pushViewController:teacherProfileViewController animated:YES];
+    StudentListViewController *studentListController = [[StudentListViewController alloc]initWithNibName:@"StudentListViewController" bundle:nil];
+    [self.navigationController pushViewController:studentListController animated:YES];
 }
 
 @end

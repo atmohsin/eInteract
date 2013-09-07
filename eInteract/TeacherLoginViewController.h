@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
-#import "TeachersViewProfileViewController.h"
+#import "StudentListViewController.h"
+#import "User.h"
 
 @interface TeacherLoginViewController : UIViewController {
     
 }
+
+@property (nonatomic,weak) IBOutlet UILabel *userName;
+@property (nonatomic,strong) User *user;
 
 
 -(IBAction)signOut:(id)sender;

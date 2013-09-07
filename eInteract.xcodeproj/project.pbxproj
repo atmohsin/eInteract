@@ -26,6 +26,10 @@
 		6B9B8DF517D4E652001FB0F9 /* button-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9B8DF017D4E652001FB0F9 /* button-on@2x.png */; };
 		6B9B8DF617D4E652001FB0F9 /* button.opacity in Resources */ = {isa = PBXBuildFile; fileRef = 6B9B8DF117D4E652001FB0F9 /* button.opacity */; };
 		6B9B8DFC17D50C11001FB0F9 /* AnsOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B8DFB17D50C11001FB0F9 /* AnsOptions.m */; };
+		6BC633A017D87967000E7896 /* StudentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC6339E17D87967000E7896 /* StudentListViewController.m */; };
+		6BC633A117D87967000E7896 /* StudentListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BC6339F17D87967000E7896 /* StudentListViewController.xib */; };
+		6BC633A517D886E6000E7896 /* CourseMarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC633A317D886E5000E7896 /* CourseMarksViewController.m */; };
+		6BC633A617D886E6000E7896 /* CourseMarksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BC633A417D886E5000E7896 /* CourseMarksViewController.xib */; };
 		6BCB340A17D06A96000A188C /* Marks.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB340917D06A96000A188C /* Marks.m */; };
 		6BCC874017D755C70003E0C0 /* Ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BCC873D17D755C70003E0C0 /* Ok.png */; };
 		6BCC874117D755C70003E0C0 /* Student.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BCC873E17D755C70003E0C0 /* Student.png */; };
@@ -89,6 +93,12 @@
 		6B9B8DF117D4E652001FB0F9 /* button.opacity */ = {isa = PBXFileReference; lastKnownFileType = file; path = button.opacity; sourceTree = "<group>"; };
 		6B9B8DFA17D50C11001FB0F9 /* AnsOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnsOptions.h; sourceTree = "<group>"; };
 		6B9B8DFB17D50C11001FB0F9 /* AnsOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnsOptions.m; sourceTree = "<group>"; };
+		6BC6339D17D87967000E7896 /* StudentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentListViewController.h; sourceTree = "<group>"; };
+		6BC6339E17D87967000E7896 /* StudentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentListViewController.m; sourceTree = "<group>"; };
+		6BC6339F17D87967000E7896 /* StudentListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentListViewController.xib; sourceTree = "<group>"; };
+		6BC633A217D886E5000E7896 /* CourseMarksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseMarksViewController.h; sourceTree = "<group>"; };
+		6BC633A317D886E5000E7896 /* CourseMarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseMarksViewController.m; sourceTree = "<group>"; };
+		6BC633A417D886E5000E7896 /* CourseMarksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseMarksViewController.xib; sourceTree = "<group>"; };
 		6BCB340817D06A96000A188C /* Marks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marks.h; sourceTree = "<group>"; };
 		6BCB340917D06A96000A188C /* Marks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marks.m; sourceTree = "<group>"; };
 		6BCC873D17D755C70003E0C0 /* Ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ok.png; sourceTree = "<group>"; };
@@ -191,6 +201,10 @@
 				6BE8A2C017D27B900023B2A3 /* AssessQuestViewController.m */,
 				6BE8A2C417D27CB00023B2A3 /* AssessResultViewController.h */,
 				6BE8A2C517D27CB00023B2A3 /* AssessResultViewController.m */,
+				6BC6339D17D87967000E7896 /* StudentListViewController.h */,
+				6BC6339E17D87967000E7896 /* StudentListViewController.m */,
+				6BC633A217D886E5000E7896 /* CourseMarksViewController.h */,
+				6BC633A317D886E5000E7896 /* CourseMarksViewController.m */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -198,6 +212,8 @@
 		6B084B8017C79472000DC3D6 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				6BC633A417D886E5000E7896 /* CourseMarksViewController.xib */,
+				6BC6339F17D87967000E7896 /* StudentListViewController.xib */,
 				6BCC874617D756950003E0C0 /* UserTypeCell.xib */,
 				6BE8A2C617D27CB00023B2A3 /* AssessResultViewController.xib */,
 				6BE8A2C117D27B900023B2A3 /* AssessQuestViewController.xib */,
@@ -395,6 +411,8 @@
 				6BCC874117D755C70003E0C0 /* Student.png in Resources */,
 				6BCC874217D755C70003E0C0 /* Teacher.png in Resources */,
 				6BCC874717D756950003E0C0 /* UserTypeCell.xib in Resources */,
+				6BC633A117D87967000E7896 /* StudentListViewController.xib in Resources */,
+				6BC633A617D886E6000E7896 /* CourseMarksViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +446,8 @@
 				6B9B8DEC17D4DF53001FB0F9 /* GSRadioButtonSetController.m in Sources */,
 				6B9B8DFC17D50C11001FB0F9 /* AnsOptions.m in Sources */,
 				6BCC874517D756810003E0C0 /* UserTypeCell.m in Sources */,
+				6BC633A017D87967000E7896 /* StudentListViewController.m in Sources */,
+				6BC633A517D886E6000E7896 /* CourseMarksViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

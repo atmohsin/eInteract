@@ -385,4 +385,68 @@ static Database *instance = NULL;
     
 }
 
+-(NSMutableArray *)getAllStudents{
+    NSMutableArray *students = nil;
+    
+    
+    sqlite3 *db;
+    if(sqlite3_open([self.databasePath UTF8String], &db) == SQLITE_OK){
+        students = [NSMutableArray array];
+        
+        const char *sqlStatement = [SELECT_ALL_STUDENTS UTF8String];
+        sqlite3_stmt *compiledStatement;
+        
+        if (sqlite3_prepare_v2(db, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+            while (sqlite3_step(compiledStatement) == SQLITE_ROW) {
+                User *userObj = [[User alloc]init];
+                userObj.userId = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 0)];
+                userObj.userName = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 1)];
+                userObj.fullName = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 2)];
+                
+                [students addObject:userObj];
+            }
+        }
+        //Release the compiled statement from memory
+        sqlite3_finalize(compiledStatement);
+    }
+    else {
+        NSLog(@"getAllStudents Errpr : %@ ",[NSString stringWithUTF8String:sqlite3_errmsg(db)]);
+    }
+    //close the database
+    sqlite3_close(db);
+    return students;
+}
+
+-(NSMutableArray *) getCouseMarksForStudent:(NSString *)userId {
+    NSMutableArray *couseMarks = nil;
+    
+    
+    sqlite3 *db;
+    if(sqlite3_open([self.databasePath UTF8String], &db) == SQLITE_OK){
+        couseMarks = [NSMutableArray array];
+        
+        const char *sqlStatement = [SELECT_COURSE_MARK_FOR_STUDENT UTF8String];
+        sqlite3_stmt *compiledStatement;
+        
+        if (sqlite3_prepare_v2(db, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+            sqlite3_bind_text(compiledStatement, 1, [userId UTF8String], -1, SQLITE_TRANSIENT);
+            while (sqlite3_step(compiledStatement) == SQLITE_ROW) {
+                Marks *marks = [[Marks alloc]init];
+                marks.courseName = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 0)];
+                marks.marks = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 1)];
+                [couseMarks addObject:marks];
+            }
+        }
+        //Release the compiled statement from memory
+        sqlite3_finalize(compiledStatement);
+    }
+    else {
+        NSLog(@"getCouseMarksForStudent Errpr : %@ ",[NSString stringWithUTF8String:sqlite3_errmsg(db)]);
+    }
+    //close the database
+    sqlite3_close(db);
+    return couseMarks;
+
+}
+
 @end

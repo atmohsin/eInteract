@@ -8,16 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "UserTypeCell.h"
 
-@interface RegistrationViewController : UIViewController{
-    
+@interface RegistrationViewController : UIViewController <UITabBarControllerDelegate,UITableViewDataSource> {
+    UserTypeCell *cell;
+    NSString *userType;
 }
 
-@property (nonatomic,retain) IBOutlet UITextField *password;
-@property (nonatomic,retain) IBOutlet UITextField *confirmPassword;
-@property (nonatomic,retain) IBOutlet UITextField *emailId;
-@property (nonatomic,retain) IBOutlet UITextField *mobileNo;
-@property (nonatomic,retain) IBOutlet UITextField *fullName;
+
+@property (strong,nonatomic) NSArray *labelArray;
+@property (strong,nonatomic) NSArray *name;
+@property (strong,nonatomic) NSArray *icons;
+
+@property (nonatomic,weak) IBOutlet UITextField *password;
+@property (nonatomic,weak) IBOutlet UITextField *confirmPassword;
+@property (nonatomic,weak) IBOutlet UITextField *emailId;
+@property (nonatomic,weak) IBOutlet UITextField *mobileNo;
+@property (nonatomic,weak) IBOutlet UITextField *fullName;
 
 -(IBAction)submitBtn:(id)sender;
 -(User *)populateUser;

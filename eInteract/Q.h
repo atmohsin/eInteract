@@ -19,5 +19,7 @@ extern NSString *const SELECT_ENROL_COURSE_ID;
 extern NSString *const SELECT_ASSESS_TEST;
 extern NSString *const SELECT_TEST_QUEST;
 extern NSString *const SELECT_QUEST_OPT;
+extern NSString *const SELECT_ALL_STUDENTS;
+extern NSString *const SELECT_COURSE_MARK_FOR_STUDENT;
 
 @end

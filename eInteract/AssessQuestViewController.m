@@ -91,8 +91,51 @@
         UIBarButtonItem *nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(nextBtn:)];
         self.navigationItem.rightBarButtonItem = nextButton;
     }
-    
+
+   self.secondsLeft = 60;
+   [self countdownTimer];
+
 }
+
+-(void)countdownTimer{
+    
+    self.hours = self.minutes = self.seconds = 0;
+    [self.timer invalidate];
+    self.timer = nil;
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateCounter:) userInfo:nil repeats:YES];
+}
+
+- (void)updateCounter:(NSTimer *)theTimer {
+    if(self.secondsLeft > 0 ){
+        self.secondsLeft -- ;
+        self.hours = self.secondsLeft / 3600;
+        self.minutes = (self.secondsLeft % 3600) / 60;
+        self.seconds = (self.secondsLeft %3600) % 60;
+        self.counterLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d",self.hours, self.minutes, self.seconds];
+    }
+    else{
+        [self.timer invalidate];
+        self.timer = nil;
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@""
+                                                          message:@"Time for test is over. Click ok to View the score."
+                                                         delegate:self
+                                                cancelButtonTitle:@"Ok"
+                                                otherButtonTitles:nil, nil];
+        [message show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+	if([title isEqualToString:@"Ok"])
+	{
+		[self submitBtn:nil];
+	}
+}
+
+
 -(IBAction)nextBtn:(id)sender{
 
     self.radioButtonSetController.selectedIndex = NSNotFound;
