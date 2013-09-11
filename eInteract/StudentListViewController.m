@@ -64,6 +64,7 @@
         cell.backgroundColor=[UIColor whiteColor];
         [cell.contentView addSubview:nameLabel];
         [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        cell.selectionStyle=UITableViewCellSelectionStyleGray;
     }
     NSLog(@"Inside the cellForRow");
     // Configure the cell:

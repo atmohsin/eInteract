@@ -11,6 +11,7 @@
 #import "StudentListViewController.h"
 
 @interface TeachersViewProfileViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>{
+    NSString *name;
     
 }
 

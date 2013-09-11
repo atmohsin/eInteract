@@ -19,5 +19,6 @@ NSString *const SELECT_TEST_QUEST = @"SELECT qid,name name FROM assess_quest whe
 NSString *const SELECT_QUEST_OPT = @"SELECT optid,name,iscorrect FROM assess_quest_opt where qid =?";
 NSString *const SELECT_ALL_STUDENTS = @"select userid,username,fullname from users where usertype = 'S'";
 NSString *const SELECT_COURSE_MARK_FOR_STUDENT = @"select c.name name,m.marks marks from course c,marks m where c.courseid in (SELECT courseid FROM enrol_course ec where ec.userid=?) and m.courseid = c.courseid";
+NSString *const SELECT_AVAILABLE_COURSES = @"select courseid as courseid,name as name,fee as fee,duration as duration,u.fullname fullname from course c, users u where c.facultyid = u.userid";
 
 @end

@@ -52,6 +52,11 @@
 		6BE8A2C317D27B900023B2A3 /* AssessQuestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BE8A2C117D27B900023B2A3 /* AssessQuestViewController.xib */; };
 		6BE8A2C717D27CB10023B2A3 /* AssessResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE8A2C517D27CB00023B2A3 /* AssessResultViewController.m */; };
 		6BE8A2C817D27CB10023B2A3 /* AssessResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BE8A2C617D27CB00023B2A3 /* AssessResultViewController.xib */; };
+		6BF3FA7917DF2970006414C6 /* CourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF3FA7817DF2970006414C6 /* CourseViewController.m */; };
+		6BF3FA7C17DF2982006414C6 /* CourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF3FA7B17DF2982006414C6 /* CourseDetailViewController.m */; };
+		6BF3FA7E17DF2994006414C6 /* CourseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BF3FA7D17DF2994006414C6 /* CourseDetailViewController.xib */; };
+		6BF3FA8017DF29A3006414C6 /* CourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BF3FA7F17DF29A3006414C6 /* CourseViewController.xib */; };
+		6BF3FA8317DF2BE0006414C6 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF3FA8217DF2BE0006414C6 /* Course.m */; };
 		BAE5805D17C610D600059EC4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE5805C17C610D600059EC4 /* UIKit.framework */; };
 		BAE5805F17C610D600059EC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE5805E17C610D600059EC4 /* Foundation.framework */; };
 		BAE5806117C610D600059EC4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE5806017C610D600059EC4 /* CoreGraphics.framework */; };
@@ -133,6 +138,14 @@
 		6BE8A2C417D27CB00023B2A3 /* AssessResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssessResultViewController.h; sourceTree = "<group>"; };
 		6BE8A2C517D27CB00023B2A3 /* AssessResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssessResultViewController.m; sourceTree = "<group>"; };
 		6BE8A2C617D27CB00023B2A3 /* AssessResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssessResultViewController.xib; sourceTree = "<group>"; };
+		6BF3FA7717DF2970006414C6 /* CourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseViewController.h; sourceTree = "<group>"; };
+		6BF3FA7817DF2970006414C6 /* CourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseViewController.m; sourceTree = "<group>"; };
+		6BF3FA7A17DF2982006414C6 /* CourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDetailViewController.h; sourceTree = "<group>"; };
+		6BF3FA7B17DF2982006414C6 /* CourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDetailViewController.m; sourceTree = "<group>"; };
+		6BF3FA7D17DF2994006414C6 /* CourseDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseDetailViewController.xib; sourceTree = "<group>"; };
+		6BF3FA7F17DF29A3006414C6 /* CourseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseViewController.xib; sourceTree = "<group>"; };
+		6BF3FA8117DF2BE0006414C6 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		6BF3FA8217DF2BE0006414C6 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		BAE5805917C610D600059EC4 /* eInteract.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eInteract.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAE5805C17C610D600059EC4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BAE5805E17C610D600059EC4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -181,6 +194,10 @@
 		6B084B7F17C7943C000DC3D6 /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				6BF3FA7A17DF2982006414C6 /* CourseDetailViewController.h */,
+				6BF3FA7B17DF2982006414C6 /* CourseDetailViewController.m */,
+				6BF3FA7717DF2970006414C6 /* CourseViewController.h */,
+				6BF3FA7817DF2970006414C6 /* CourseViewController.m */,
 				6BD6179617CB5F4700674E6C /* TeacherLoginViewController.h */,
 				6BD6179717CB5F4700674E6C /* TeacherLoginViewController.m */,
 				6B084B8617C7D8E2000DC3D6 /* StudentLoginViewController.h */,
@@ -212,6 +229,8 @@
 		6B084B8017C79472000DC3D6 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				6BF3FA7F17DF29A3006414C6 /* CourseViewController.xib */,
+				6BF3FA7D17DF2994006414C6 /* CourseDetailViewController.xib */,
 				6BC633A417D886E5000E7896 /* CourseMarksViewController.xib */,
 				6BC6339F17D87967000E7896 /* StudentListViewController.xib */,
 				6BCC874617D756950003E0C0 /* UserTypeCell.xib */,
@@ -256,6 +275,8 @@
 				6B2CEB0417D3540C00377712 /* Quest.m */,
 				6B9B8DFA17D50C11001FB0F9 /* AnsOptions.h */,
 				6B9B8DFB17D50C11001FB0F9 /* AnsOptions.m */,
+				6BF3FA8117DF2BE0006414C6 /* Course.h */,
+				6BF3FA8217DF2BE0006414C6 /* Course.m */,
 			);
 			name = BusinessObjects;
 			sourceTree = "<group>";
@@ -413,6 +434,8 @@
 				6BCC874717D756950003E0C0 /* UserTypeCell.xib in Resources */,
 				6BC633A117D87967000E7896 /* StudentListViewController.xib in Resources */,
 				6BC633A617D886E6000E7896 /* CourseMarksViewController.xib in Resources */,
+				6BF3FA7E17DF2994006414C6 /* CourseDetailViewController.xib in Resources */,
+				6BF3FA8017DF29A3006414C6 /* CourseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +471,9 @@
 				6BCC874517D756810003E0C0 /* UserTypeCell.m in Sources */,
 				6BC633A017D87967000E7896 /* StudentListViewController.m in Sources */,
 				6BC633A517D886E6000E7896 /* CourseMarksViewController.m in Sources */,
+				6BF3FA7917DF2970006414C6 /* CourseViewController.m in Sources */,
+				6BF3FA7C17DF2982006414C6 /* CourseDetailViewController.m in Sources */,
+				6BF3FA8317DF2BE0006414C6 /* Course.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

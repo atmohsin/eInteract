@@ -449,4 +449,39 @@ static Database *instance = NULL;
 
 }
 
+
+-(NSMutableArray *) getAvailableCourses {
+    NSMutableArray *courses = nil;
+    
+    
+    sqlite3 *db;
+    if(sqlite3_open([self.databasePath UTF8String], &db) == SQLITE_OK){
+        courses = [NSMutableArray array];
+        
+        const char *sqlStatement = [SELECT_AVAILABLE_COURSES UTF8String];
+        sqlite3_stmt *compiledStatement;
+        
+        if (sqlite3_prepare_v2(db, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+            while (sqlite3_step(compiledStatement) == SQLITE_ROW) {
+                Course *course = [[Course alloc]init];
+                course.courseId = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 0)];
+                course.name = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 1)];
+                course.fee = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 2)];
+                course.duration = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 3)];
+                course.facultyFullName = [self toNSString:(char *)sqlite3_column_text(compiledStatement, 4)];
+                [courses addObject:course];
+            }
+        }
+        //Release the compiled statement from memory
+        sqlite3_finalize(compiledStatement);
+    }
+    else {
+        NSLog(@"getAvailableCourses Errpr : %@ ",[NSString stringWithUTF8String:sqlite3_errmsg(db)]);
+    }
+    //close the database
+    sqlite3_close(db);
+    return courses;
+    
+}
+
 @end

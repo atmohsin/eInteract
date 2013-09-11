@@ -14,6 +14,7 @@
 #import "AssessTest.h"
 #import "Quest.h"
 #import "AnsOptions.h"
+#import "Course.h"
 
 @interface Database : NSObject{
     
@@ -45,6 +46,6 @@ fullname : (NSString *) fullname
 -(void)insertUpdateMarks:(Marks *)marks;
 -(NSMutableArray *) getAllStudents;
 -(NSMutableArray *) getCouseMarksForStudent:(NSString *)userId;
-
+-(NSMutableArray *) getAvailableCourses;
 
 @end

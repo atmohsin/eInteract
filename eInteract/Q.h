@@ -21,5 +21,6 @@ extern NSString *const SELECT_TEST_QUEST;
 extern NSString *const SELECT_QUEST_OPT;
 extern NSString *const SELECT_ALL_STUDENTS;
 extern NSString *const SELECT_COURSE_MARK_FOR_STUDENT;
+extern NSString *const SELECT_AVAILABLE_COURSES;
 
 @end

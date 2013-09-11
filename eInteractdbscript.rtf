@@ -29,8 +29,11 @@ create table course(\
   name text,\
   facultyid INTEGER,\
   fee INTEGER,\
+  duration INTEGER,\
   FOREIGN KEY(facultyid) REFERENCES user (userid)\
 );\
+\
+ \
 \
 create table assess_test(\
    testid INTEGER PRIMARY KEY AUTOINCREMENT,\

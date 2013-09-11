@@ -64,5 +64,10 @@
     [self.navigationController pushViewController:assessTestControll animated:YES];
 }
 
+-(IBAction)courseBtn:(id)sender{
+    CourseViewController *courseController = [[CourseViewController alloc]initWithNibName:@"CourseViewController" bundle:nil];
+    [self.navigationController pushViewController:courseController animated:YES];
+}
+
 
 @end

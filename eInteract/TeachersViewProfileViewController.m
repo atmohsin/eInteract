@@ -31,7 +31,7 @@
     Database *db = [Database INSTANCE];
     self.studentsList = [db getAllStudentsCourseMarks];
     self.tableValues = [[NSArray alloc]initWithObjects:@"Select Student",@"Selected Course",@"Marks Obtained", nil];
-
+    name = @"test";
 }
 
 
@@ -47,9 +47,9 @@
         
         // create a background image for the cell:
         //UIImageView *bgView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        //[cell setBackgroundColor:[UIColor clearColor]];
-        //[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        //[cell setBackgroundView:bgView];
+        [cell setBackgroundColor:[UIColor clearColor]];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [cell setBackgroundView:nil];
         [cell setIndentationWidth:0.0];
         
         // create a custom label:                                        x    y   width  height
@@ -57,6 +57,7 @@
         [nameLabel setTag:1];
         [nameLabel setBackgroundColor:[UIColor clearColor]]; // transparent label background
         [nameLabel setFont:[UIFont boldSystemFontOfSize:17.0]];
+        //cell.selectionStyle=UITableViewCellSelectionStyleNone;
         // custom views should be added as subviews of the cell's contentView:
         [cell.contentView addSubview:nameLabel];
     }

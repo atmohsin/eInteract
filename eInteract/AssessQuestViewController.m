@@ -188,6 +188,9 @@
 }
 
 -(IBAction)submitBtn:(id)sender{
+    [self.timer invalidate];
+    self.timer = nil;
+
     AssessResultViewController *resultController = [[AssessResultViewController alloc]initWithNibName:@"AssessResultViewController" bundle:nil];
     NSLog(@" No of correct ans %d",noOfCorrectAns);
     int score = (noOfCorrectAns*100)/20;

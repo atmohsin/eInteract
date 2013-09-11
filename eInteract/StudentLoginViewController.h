@@ -11,6 +11,7 @@
 #import "ViewController.h"
 #import "StudentViewProfileViewController.h"
 #import "AssesTestViewController.h"
+#import "CourseViewController.h"
 
 
 @interface StudentLoginViewController : UIViewController{
@@ -24,5 +25,6 @@
 -(IBAction)signOut:(id)sender;
 -(IBAction)viewProfileBtn:(id)sender;
 -(IBAction)assessTest:(id)sender;
+-(IBAction)courseBtn:(id)sender;
 
 @end
